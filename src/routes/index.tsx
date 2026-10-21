@@ -194,16 +194,28 @@ function Index() {
             <p className="mt-5 text-xl opacity-90">
               We'll look at your Google profile, compare you to local competitors, and show you exactly how to get more reviews. No cost, no pressure.
             </p>
-            <p className="mt-6 flex items-center gap-2 font-semibold">
-              <Phone className="size-5" /> Prefer to talk? Call {AGENCY_PHONE}
+            <p className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 font-semibold">
+              <Phone className="size-5" /> Prefer to talk?{" "}
+              <a href={`tel:${AGENCY_PHONE.replace(/[^0-9+]/g, "")}`} className="underline underline-offset-4">
+                {AGENCY_PHONE}
+              </a>
             </p>
           </div>
           <AuditForm />
         </div>
       </section>
 
-      <footer className="border-t border-border py-8 text-center text-base text-muted-foreground">
-        © {new Date().getFullYear()} {AGENCY_NAME} · {AGENCY_PHONE}
+      <footer className="border-t border-border py-10 text-center text-base text-muted-foreground">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-5">
+          <img src={logoAsset.url} alt={AGENCY_NAME} className="h-7 w-auto" />
+          <a
+            href={`tel:${AGENCY_PHONE.replace(/[^0-9+]/g, "")}`}
+            className="inline-flex items-center gap-2 font-semibold text-primary"
+          >
+            <Phone className="size-4" /> {AGENCY_PHONE}
+          </a>
+          <p>© {new Date().getFullYear()} {AGENCY_NAME}</p>
+        </div>
       </footer>
     </div>
   );
