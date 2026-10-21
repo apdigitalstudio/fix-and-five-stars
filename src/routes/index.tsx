@@ -1,14 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { Star, PhoneMissed, TrendingDown, MessageSquareOff, Send, Bot, Share2, Phone, Check, ArrowRight } from "lucide-react";
+import { Star, PhoneMissed, TrendingDown, MessageSquareOff, Send, Bot, Share2, Phone, Mail, Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { auditSchema, submitAudit } from "@/lib/audit.functions";
-import logoAsset from "@/assets/ap-digital-studio-logo.png.asset.json";
+import logoAsset from "@/assets/ap-mark.png.asset.json";
 
 const AGENCY_NAME = "AP Digital Studio";
+const AGENCY_OWNER = "Hector Aular";
+const AGENCY_FULL_NAME = `${AGENCY_NAME} | ${AGENCY_OWNER}`;
 const AGENCY_PHONE = "(786) 247-8529";
+const AGENCY_EMAIL = "hector.apdigitalstudio@gmail.com";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -53,9 +56,12 @@ function Index() {
   return (
     <div className="min-h-screen font-sans text-lg">
       <header className="sticky top-0 z-20 border-b border-border bg-background/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
-          <a href="#" className="flex items-center" aria-label={`${AGENCY_NAME} — home`}>
-            <img src={logoAsset.url} alt={AGENCY_NAME} className="h-8 w-auto sm:h-10" />
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
+          <a href="#" className="flex items-center gap-2.5" aria-label={`${AGENCY_FULL_NAME} — home`}>
+            <img src={logoAsset.url} alt="" className="size-8 shrink-0 sm:size-10" />
+            <span className="font-display text-sm font-bold leading-tight tracking-tight sm:text-lg">
+              {AGENCY_NAME} <span className="text-primary">|</span> {AGENCY_OWNER}
+            </span>
           </a>
           <a href={`tel:${AGENCY_PHONE.replace(/[^0-9+]/g, "")}`} className="hidden items-center gap-2 font-semibold text-primary sm:flex">
             <Phone className="size-4" /> {AGENCY_PHONE}
@@ -200,6 +206,12 @@ function Index() {
                 {AGENCY_PHONE}
               </a>
             </p>
+            <p className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 font-semibold">
+              <Mail className="size-5" /> Or email{" "}
+              <a href={`mailto:${AGENCY_EMAIL}`} className="underline underline-offset-4">
+                {AGENCY_EMAIL}
+              </a>
+            </p>
           </div>
           <AuditForm />
         </div>
@@ -207,14 +219,21 @@ function Index() {
 
       <footer className="border-t border-border py-10 text-center text-base text-muted-foreground">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-5">
-          <img src={logoAsset.url} alt={AGENCY_NAME} className="h-7 w-auto" />
-          <a
-            href={`tel:${AGENCY_PHONE.replace(/[^0-9+]/g, "")}`}
-            className="inline-flex items-center gap-2 font-semibold text-primary"
-          >
-            <Phone className="size-4" /> {AGENCY_PHONE}
-          </a>
-          <p>© {new Date().getFullYear()} {AGENCY_NAME}</p>
+          <div className="flex items-center gap-2.5">
+            <img src={logoAsset.url} alt="" className="size-8 shrink-0" />
+            <span className="font-display text-lg font-bold tracking-tight">
+              {AGENCY_NAME} <span className="text-primary">|</span> {AGENCY_OWNER}
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-semibold text-primary">
+            <a href={`tel:${AGENCY_PHONE.replace(/[^0-9+]/g, "")}`} className="inline-flex items-center gap-2">
+              <Phone className="size-4" /> {AGENCY_PHONE}
+            </a>
+            <a href={`mailto:${AGENCY_EMAIL}`} className="inline-flex items-center gap-2">
+              <Mail className="size-4" /> {AGENCY_EMAIL}
+            </a>
+          </div>
+          <p>© {new Date().getFullYear()} {AGENCY_FULL_NAME}</p>
         </div>
       </footer>
     </div>
