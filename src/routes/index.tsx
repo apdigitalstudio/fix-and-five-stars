@@ -170,7 +170,7 @@ function Index() {
           <h2 className="font-display text-3xl font-bold sm:text-4xl">One simple plan</h2>
           <div className="mt-10 rounded-3xl border-2 border-primary bg-card p-8 shadow-soft">
             <p className="font-display text-6xl font-extrabold">
-              $300<span className="text-2xl font-semibold text-muted-foreground">/month</span>
+              $297<span className="text-2xl font-semibold text-muted-foreground">/month</span>
             </p>
             <ul className="mx-auto mt-8 max-w-xs space-y-3 text-left">
               {["Automatic review requests", "AI review responses", "Best reviews shared to social"].map((f) => (
