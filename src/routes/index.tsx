@@ -5,21 +5,21 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { auditSchema, submitAudit } from "@/lib/audit.functions";
+import logoAsset from "@/assets/ap-digital-studio-logo.png.asset.json";
 
-// Placeholders — replace with your own details
-const AGENCY_NAME = "[Your Agency Name]";
-const AGENCY_PHONE = "(555) 555-5555";
+const AGENCY_NAME = "AP Digital Studio";
+const AGENCY_PHONE = "(786) 247-8529";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "More 5-Star Reviews for Appliance Repair Businesses" },
+      { title: "AP Digital Studio — More 5-Star Google Reviews for Appliance Repair" },
       {
         name: "description",
         content:
-          "A done-for-you Google review system for appliance repair companies. More reviews, higher rankings, more calls. Get a free review audit.",
+          "AP Digital Studio runs a done-for-you Google review system for appliance repair companies. More reviews, higher rankings, more calls. Get a free review audit.",
       },
-      { property: "og:title", content: "More 5-Star Reviews for Appliance Repair Businesses" },
+      { property: "og:title", content: "AP Digital Studio — More 5-Star Google Reviews for Appliance Repair" },
       {
         property: "og:description",
         content: "Done-for-you review system: more Google reviews, higher ranking, more jobs. Get your free audit.",
@@ -54,11 +54,8 @@ function Index() {
     <div className="min-h-screen font-sans text-lg">
       <header className="sticky top-0 z-20 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
-          <a href="#" className="flex items-center gap-2">
-            <span className="grid size-10 place-items-center rounded-xl border-2 border-dashed border-primary/40 bg-primary-soft text-xs font-bold text-primary">
-              LOGO
-            </span>
-            <span className="font-display text-lg font-bold">{AGENCY_NAME}</span>
+          <a href="#" className="flex items-center" aria-label={`${AGENCY_NAME} — home`}>
+            <img src={logoAsset.url} alt={AGENCY_NAME} className="h-8 w-auto sm:h-10" />
           </a>
           <a href={`tel:${AGENCY_PHONE.replace(/[^0-9+]/g, "")}`} className="hidden items-center gap-2 font-semibold text-primary sm:flex">
             <Phone className="size-4" /> {AGENCY_PHONE}
@@ -74,7 +71,7 @@ function Index() {
             <span className="font-medium text-muted-foreground">For local appliance repair pros</span>
           </div>
           <h1 className="font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl">
-            More 5-star reviews. <span className="text-primary">More repair jobs.</span>
+            More 5-star reviews. <span className="text-primary sm:whitespace-nowrap">More repair jobs.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xl text-muted-foreground">
             We help appliance repair businesses get a steady stream of Google reviews, so you show up first and your phone keeps ringing.
@@ -173,7 +170,7 @@ function Index() {
           <h2 className="font-display text-3xl font-bold sm:text-4xl">One simple plan</h2>
           <div className="mt-10 rounded-3xl border-2 border-primary bg-card p-8 shadow-soft">
             <p className="font-display text-6xl font-extrabold">
-              $300<span className="text-2xl font-semibold text-muted-foreground">/month</span>
+              $297<span className="text-2xl font-semibold text-muted-foreground">/month</span>
             </p>
             <ul className="mx-auto mt-8 max-w-xs space-y-3 text-left">
               {["Automatic review requests", "AI review responses", "Best reviews shared to social"].map((f) => (
@@ -197,16 +194,28 @@ function Index() {
             <p className="mt-5 text-xl opacity-90">
               We'll look at your Google profile, compare you to local competitors, and show you exactly how to get more reviews. No cost, no pressure.
             </p>
-            <p className="mt-6 flex items-center gap-2 font-semibold">
-              <Phone className="size-5" /> Prefer to talk? Call {AGENCY_PHONE}
+            <p className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 font-semibold">
+              <Phone className="size-5" /> Prefer to talk?{" "}
+              <a href={`tel:${AGENCY_PHONE.replace(/[^0-9+]/g, "")}`} className="underline underline-offset-4">
+                {AGENCY_PHONE}
+              </a>
             </p>
           </div>
           <AuditForm />
         </div>
       </section>
 
-      <footer className="border-t border-border py-8 text-center text-base text-muted-foreground">
-        © {new Date().getFullYear()} {AGENCY_NAME} · {AGENCY_PHONE}
+      <footer className="border-t border-border py-10 text-center text-base text-muted-foreground">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-5">
+          <img src={logoAsset.url} alt={AGENCY_NAME} className="h-7 w-auto" />
+          <a
+            href={`tel:${AGENCY_PHONE.replace(/[^0-9+]/g, "")}`}
+            className="inline-flex items-center gap-2 font-semibold text-primary"
+          >
+            <Phone className="size-4" /> {AGENCY_PHONE}
+          </a>
+          <p>© {new Date().getFullYear()} {AGENCY_NAME}</p>
+        </div>
       </footer>
     </div>
   );
