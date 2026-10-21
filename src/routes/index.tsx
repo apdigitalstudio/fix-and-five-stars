@@ -5,21 +5,21 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { auditSchema, submitAudit } from "@/lib/audit.functions";
+import logoAsset from "@/assets/ap-digital-studio-logo.png.asset.json";
 
-// Placeholders — replace with your own details
-const AGENCY_NAME = "[Your Agency Name]";
-const AGENCY_PHONE = "(555) 555-5555";
+const AGENCY_NAME = "AP Digital Studio";
+const AGENCY_PHONE = "(786) 247-8529";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "More 5-Star Reviews for Appliance Repair Businesses" },
+      { title: "AP Digital Studio — More 5-Star Google Reviews for Appliance Repair" },
       {
         name: "description",
         content:
-          "A done-for-you Google review system for appliance repair companies. More reviews, higher rankings, more calls. Get a free review audit.",
+          "AP Digital Studio runs a done-for-you Google review system for appliance repair companies. More reviews, higher rankings, more calls. Get a free review audit.",
       },
-      { property: "og:title", content: "More 5-Star Reviews for Appliance Repair Businesses" },
+      { property: "og:title", content: "AP Digital Studio — More 5-Star Google Reviews for Appliance Repair" },
       {
         property: "og:description",
         content: "Done-for-you review system: more Google reviews, higher ranking, more jobs. Get your free audit.",
@@ -54,11 +54,8 @@ function Index() {
     <div className="min-h-screen font-sans text-lg">
       <header className="sticky top-0 z-20 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
-          <a href="#" className="flex items-center gap-2">
-            <span className="grid size-10 place-items-center rounded-xl border-2 border-dashed border-primary/40 bg-primary-soft text-xs font-bold text-primary">
-              LOGO
-            </span>
-            <span className="font-display text-lg font-bold">{AGENCY_NAME}</span>
+          <a href="#" className="flex items-center" aria-label={`${AGENCY_NAME} — home`}>
+            <img src={logoAsset.url} alt={AGENCY_NAME} className="h-8 w-auto sm:h-10" />
           </a>
           <a href={`tel:${AGENCY_PHONE.replace(/[^0-9+]/g, "")}`} className="hidden items-center gap-2 font-semibold text-primary sm:flex">
             <Phone className="size-4" /> {AGENCY_PHONE}
