@@ -16,13 +16,13 @@ const AGENCY_EMAIL = "hector.apdigitalstudio@gmail.com";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AP Digital Studio — More 5-Star Google Reviews for Appliance Repair" },
+      { title: "AP Digital Studio — More 5-Star Google Reviews for Small Contracting Businesses" },
       {
         name: "description",
         content:
-          "AP Digital Studio runs a done-for-you Google review system for appliance repair companies. More reviews, higher rankings, more calls. Get a free review audit.",
+          "AP Digital Studio runs a done-for-you Google review system for small contracting businesses. More reviews, higher rankings, more calls. Get a free review audit.",
       },
-      { property: "og:title", content: "AP Digital Studio — More 5-Star Google Reviews for Appliance Repair" },
+      { property: "og:title", content: "AP Digital Studio — More 5-Star Google Reviews for Small Contracting Businesses" },
       {
         property: "og:description",
         content: "Done-for-you review system: more Google reviews, higher ranking, more jobs. Get your free audit.",
@@ -74,13 +74,13 @@ function Index() {
         <div className="mx-auto max-w-4xl px-5 py-20 text-center sm:py-28">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 text-base shadow-soft">
             <Stars className="size-4" />
-            <span className="font-medium text-muted-foreground">For local appliance repair pros</span>
+            <span className="font-medium text-muted-foreground">For small contracting businesses</span>
           </div>
           <h1 className="font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl">
             More 5-star reviews. <span className="text-primary sm:whitespace-nowrap">More repair jobs.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xl text-muted-foreground">
-            We help appliance repair businesses get a steady stream of Google reviews, so you show up first and your phone keeps ringing.
+            We help small contracting businesses get a steady stream of Google reviews, so you show up first and your phone keeps ringing.
           </p>
           <div className="mt-10">
             <CTA />
