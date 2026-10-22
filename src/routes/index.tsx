@@ -95,8 +95,8 @@ function Index() {
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {[
             { icon: MessageSquareOff, title: "Not enough Google reviews", text: "Happy customers forget to leave a review. Your great work stays invisible." },
-            { icon: PhoneMissed, title: "Missed calls become missed jobs", text: "When you're behind a fridge, the next caller just dials someone else." },
-            { icon: TrendingDown, title: "Competitors rank higher", text: "The shop with more recent reviews gets the top spot and the call." },
+            { icon: PhoneMissed, title: "Missed calls become missed jobs", text: "When you're on a job site, the next caller just dials someone else." },
+            { icon: TrendingDown, title: "Competitors rank higher", text: "The business with more recent reviews gets the top spot and the call." },
           ].map(({ icon: Icon, title, text }) => (
             <div key={title} className="rounded-2xl border border-border bg-card p-7">
               <div className="grid size-12 place-items-center rounded-xl bg-destructive/10 text-destructive">
