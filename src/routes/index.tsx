@@ -77,7 +77,7 @@ function Index() {
             <span className="font-medium text-muted-foreground">For small contracting businesses</span>
           </div>
           <h1 className="font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl">
-            More 5-star reviews. <span className="text-primary sm:whitespace-nowrap">More repair jobs.</span>
+            More 5-star reviews. <span className="text-primary sm:whitespace-nowrap">More booked jobs.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xl text-muted-foreground">
             We help small contracting businesses get a steady stream of Google reviews, so you show up first and your phone keeps ringing.
