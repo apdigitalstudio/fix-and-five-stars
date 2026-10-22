@@ -139,7 +139,7 @@ function Index() {
 
       {/* Why it works */}
       <section className="mx-auto max-w-6xl px-5 py-20">
-        <div className="grid items-center gap-12 md:grid-cols-2">
+        <div className="max-w-2xl">
           <div>
             <h2 className="font-display text-3xl font-bold sm:text-4xl">Why it works</h2>
             <p className="mt-4 text-xl text-muted-foreground">Google rewards businesses that get fresh reviews often.</p>
@@ -154,19 +154,6 @@ function Index() {
               ))}
             </ol>
           </div>
-          <figure className="rounded-3xl border border-border bg-card p-8 shadow-soft">
-            <Stars />
-            <blockquote className="mt-5 text-xl leading-relaxed">
-              "[Customer testimonial goes here. Example: We went from 23 to 110 reviews in four months and now we're booked solid.]"
-            </blockquote>
-            <figcaption className="mt-6 flex items-center gap-3">
-              <span className="size-12 rounded-full border-2 border-dashed border-primary/40 bg-primary-soft" />
-              <span>
-                <span className="block font-semibold">[Owner Name]</span>
-                <span className="block text-base text-muted-foreground">[Business Name], [City]</span>
-              </span>
-            </figcaption>
-          </figure>
         </div>
       </section>
 
