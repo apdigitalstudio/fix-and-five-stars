@@ -140,7 +140,6 @@ function Index() {
       {/* Why it works */}
       <section className="mx-auto max-w-6xl px-5 py-20">
         <div className="max-w-2xl">
-          <div>
             <h2 className="font-display text-3xl font-bold sm:text-4xl">Why it works</h2>
             <p className="mt-4 text-xl text-muted-foreground">Google rewards businesses that get fresh reviews often.</p>
             <ol className="mt-8 space-y-4">
@@ -153,7 +152,6 @@ function Index() {
                 </li>
               ))}
             </ol>
-          </div>
         </div>
       </section>
 
